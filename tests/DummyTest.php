@@ -8,6 +8,6 @@ class DummyTest extends TestCase
     public function testIsHappy(): void
     {
         $dummy = new Dummy();
-        $this->assertTrue($dummy->isHappy());
+        $this->assertFalse($dummy->isHappy());
     }
 }
