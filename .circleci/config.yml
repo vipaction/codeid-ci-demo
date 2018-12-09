@@ -41,7 +41,7 @@ jobs:
           paths:
             - vendor
       - run: vendor/bin/security-checker security:check
-  front:
+  build-npm:
     docker:
       - image: circleci/node:9
     steps:
@@ -62,6 +62,7 @@ workflows:
   commit:
     jobs:
       - build
+      - build-npm
       - security-check
 
   security-check:
