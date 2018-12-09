@@ -2,7 +2,7 @@
     "name": "vipaction/codeid",
     "type": "project",
     "description": "Test demo project",
-    "license": [],
+    "license": "MIT",
     "require": {
         "php": ">=7.1"
     },
