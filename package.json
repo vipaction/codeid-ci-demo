@@ -1,0 +1,10 @@
+{
+  "name": "codeid",
+  "version": "1.0.0",
+  "scripts": {
+    "scss": "node-sass scss -o css"
+  },
+  "dependencies": {
+    "node-sass": "*"
+  }
+}

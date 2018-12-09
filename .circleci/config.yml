@@ -41,6 +41,21 @@ jobs:
           paths:
             - vendor
       - run: vendor/bin/security-checker security:check
+  front:
+    docker:
+      - image: circleci/node:9
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-node-modules-{{ checksum "package-json.lock" }}
+            - v1-node-modules-
+      - run: npm install
+      - save_cache:
+          key: v1-node-modules-{{ checksum "package-json.lock" }}
+          paths:
+            - node-modules
+      - run: npm run scss
 
 workflows:
   version: 2
