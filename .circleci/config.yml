@@ -18,7 +18,6 @@ jobs:
             - vendor
       - run: mkdir ~/reports
       - run: vendor/bin/parallel-lint src tests
-      - run: vendor/bin/security-checker security:check
       - run: vendor/bin/phpunit --log-junit ~/reports/phpunit.xml
       - store-test-results:
           path: ~/reports
@@ -48,6 +47,7 @@ workflows:
   commit:
     jobs:
       - build
+      - security-check
 
   security-check:
     triggers:
