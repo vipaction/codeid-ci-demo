@@ -6,6 +6,7 @@ jobs:
 
     steps:
       - checkout
+      - run: composer validate --strict
       - restore_cache:
           keys:
             - v2-php-vendor-{{ checksum "composer.lock" }}
@@ -16,6 +17,8 @@ jobs:
           paths:
             - vendor
       - run: mkdir ~/reports
+      - run: vendor/bin/parallel-lint src tests
+      - run: vendor/bin/security-checker security:check
       - run: vendor/bin/phpunit --log-junit ~/reports/phpunit.xml
       - store-test-results:
           path: ~/reports

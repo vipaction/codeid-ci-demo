@@ -1,12 +1,17 @@
 {
     "name": "vipaction/codeid",
     "type": "project",
+    "description": "Test demo project",
+    "license": [],
     "require": {
         "php": ">=7.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.5",
-        "jakub-onderka/php-parallel-lint": "^1.0"
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "sensiolabs/security-checker": "^5.0",
+        "friendsofphp/php-cs-fixer": "^2.13",
+        "jakub-onderka/php-var-dump-check": "^0.3.0"
     },
     "authors": [
         {
